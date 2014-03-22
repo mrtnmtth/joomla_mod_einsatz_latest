@@ -6,22 +6,6 @@ JHTML::_('stylesheet', 'reports.css', 'modules/mod_reports/assets/');
 $moduleclass_sfx = $params->get( 'moduleclass_sfx' );
 
 
-$db =& JFactory::getDBO();
-$query = 'SELECT id, link 
-FROM `#__menu` 
-WHERE `link` LIKE "%index.php?option=com_reports2&view=home&hauptlink=1%" AND `published` =1';
-$db->setQuery($query);
-$menu = $db->loadObject();
-
-$db =& JFactory::getDBO();
-$query ='SELECT * FROM `#__reports_config` LIMIT 1';
-$db->setQuery($query);
-$config = $db->loadObject();
-
-
-$baseUploadDir = !empty($config->imagepath) ? $config->imagepath : 'images'.DS.$option.DS.'gallery'; // Bilder-Verzeichniss
-
-
 if ($count>count($frontReports))
     {$count=count($frontReports);}
 
