@@ -8,25 +8,6 @@ table.modReports {
 	border-collapse: collapse;
 	width:auto;
 }
-table.modReports th, table.modReports td {}
-#link0 {
-	color:#fff000 !important;
-	text-decoration:none !important;
-}
-#link1 {
-	color:#000000 !important;
-	text-decoration:none !important;
-}
-#link2 {
-	color:#ff0000 !important;
-	text-decoration:none !important;
-}
-round img {
-	border: none;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	.border-radius: 8px;
-}
 </style>';
 
 if ($count>count($frontReports))
@@ -91,7 +72,7 @@ for($i=0; $i < $count; $i++)
 	if (($bild=='1') and ($foto[$i]))
 	{
 		echo '<td><a href="'.$link[$i].'">';
-		echo '<img src="'.$baseUploadDir.'/'.$foto[$i].'" style="margin: 2px 2px 2px 2px; padding:2px 2px 2px 2x;height:auto;width:'.$bild_breite.'; float:'.$bild_float.'; border:'.$bild_border.';-moz-border-radius: 8px;-webkit-border-radius: 8px;.border-radius: 8px;" /></a></td>';
+		echo '<img src="'.$baseUploadDir.'/'.$foto[$i].'" style="margin: 2px 2px 2px 2px; padding:2px 2px 2px 2px;height:auto;width:'.$bild_breite.'; float:'.$bild_float.'; border:'.$bild_border.';" /></a></td>';
 	}
 
 	echo '</tr><tr style="border-bottom: #000000 1px dotted;"></tr>';
