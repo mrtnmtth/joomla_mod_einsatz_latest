@@ -1,10 +1,33 @@
 <?php
 defined('_JEXEC') or die('Restricted Access');
 
-JHTML::_('stylesheet', 'reports.css', 'modules/mod_reports/assets/');
-
 $moduleclass_sfx = $params->get( 'moduleclass_sfx' );
 
+echo '<style>
+table.modReports {
+	border-collapse: collapse;
+	width:auto;
+}
+table.modReports th, table.modReports td {}
+#link0 {
+	color:#fff000 !important;
+	text-decoration:none !important;
+}
+#link1 {
+	color:#000000 !important;
+	text-decoration:none !important;
+}
+#link2 {
+	color:#ff0000 !important;
+	text-decoration:none !important;
+}
+round img {
+	border: none;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	.border-radius: 8px;
+}
+</style>';
 
 if ($count>count($frontReports))
     {$count=count($frontReports);}
