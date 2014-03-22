@@ -1,0 +1,35 @@
+table.modReports
+{
+	border-collapse: collapse;
+	width:auto;
+}
+
+table.modReports th, table.modReports td
+{
+	
+}
+
+#link0  {
+	color:#fff000 !important;
+	text-decoration:none !important;
+}
+#link1  {
+	color:#000000 !important;
+	text-decoration:none !important;
+}
+#link2  {
+	color:#ff0000 !important;
+	text-decoration:none !important;
+}
+
+round img {
+	border: none;
+-moz-border-radius: 8px;
+
+/* Webkit-Browser (Chrome, Safari) */
+
+-webkit-border-radius: 8px;
+
+/* CSS3 allgemein */
+
+.border-radius: 8px;}
