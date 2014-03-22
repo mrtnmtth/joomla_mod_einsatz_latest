@@ -42,7 +42,10 @@ $frontReports = modReports2Helper::getReports($count);
 $menu = modReports2Helper::getMenu();
 $baseUploadDir = modReports2Helper::getBaseUploadDir();
 for($i=0; $i < $count; $i++)
+{
 	$foto[$i] = modReports2Helper::getFoto($frontReports, $i);
+	$link[$i] = JRoute::_('index.php?option=com_reports2&Itemid='.$menu->id.'&view=show&id='.$frontReports[$i]->id);
+}
 
 require(JModuleHelper::getLayoutPath($module->module));
 

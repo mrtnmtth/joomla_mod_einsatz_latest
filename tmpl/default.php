@@ -32,13 +32,10 @@ round img {
 if ($count>count($frontReports))
 	$count=count($frontReports);
 
+echo '<table style="width:100%;" class="modReports" class="'.$moduleclass_sfx;
 if ($display[umbruch] == '0')
-	echo '<table style="width:100%;" class="modReports" class="'
-		.$moduleclass_sfx.'" nowrap="nowrap" >';
-else
-	echo '<table style="width:100%;" class="modReports" class="'
-		.$moduleclass_sfx.'" >';
-
+	echo '" nowrap="nowrap"';
+echo '>';
 
 for($i=0; $i < $count; $i++)
 {
@@ -61,23 +58,15 @@ for($i=0; $i < $count; $i++)
 	if ($display[umbruch] == '1')
 		echo '<br/>';
 
-	if ($display[templatecolor] != '1')
+	if ($display[data1] == '1')
 	{
-		if ($display[data1] == '1')
-		{
-			echo '<a style="color:#'.$coloralert.';text-decoration:none;" href="'.JRoute::_('index.php?option=com_reports2&Itemid='.$menu->id.'&view=show&id='.$frontReports[$i]->id).'"'; 
-			echo '<b>'.$frontReports[$i]->data1.'&nbsp;&nbsp;</b></a>';  if ($display[umbruch] == '1')   echo '<br/>';
-		}
-	}
-	else
-	{
-		if ($display[data1] == '1')
-		{
-			echo'<a style="text-decoration:none;" href="'.JRoute::_('index.php?option=com_reports2&Itemid='.$menu->id.'&view=show&id='.$frontReports[$i]->id).'"';
-			echo '<b>'.$frontReports[$i]->data1.'&nbsp;&nbsp;</b></a>';
-			if ($display[umbruch] == '1')
-				echo '<br/>';
-		}
+		echo '<a style="';
+		if ($display[templatecolor] != '1')
+			echo 'color:#'.$coloralert.';';
+		echo 'text-decoration:none;" href="'.$link[$i].'">';
+		echo '<b>'.$frontReports[$i]->data1.'&nbsp;&nbsp;</b></a>';
+		if ($display[umbruch] == '1')
+			echo '<br/>';
 	}
 
 	if ($display[address] == '1')
@@ -92,25 +81,20 @@ for($i=0; $i < $count; $i++)
 		echo $frontReports[$i]->summary;
 
 	if ($readontext)
-		echo '<a style="color:#'.$coloralert.';text-decoration:none;" href="'.JRoute::_('index.php?option=com_reports2&Itemid='.$menu->id.'&view=show&id='.$frontReports[$i]->id).'">&nbsp;'.$readontext.'</a>';  
+		echo '<a style="color:#'.$coloralert.';text-decoration:none;" href="'.$link[$i].'">&nbsp;'.$readontext.'</a>';
 
-	echo '<br/>';
 	echo '</td>';
 
 	if ($bild_float=='none')
 		echo '</tr><tr>';
 
-	if ($bild=='1')
+	if (($bild=='1') and ($foto[$i]))
 	{
-		if ($foto[$i])
-		{
-			echo'<td><a href="'.JRoute::_('index.php?option=com_reports2&Itemid='.$menu->id.'&view=show&id='.$frontReports[$i]->id).'">';
-			echo '<img src="'.$baseUploadDir.'/'.$foto[$i].'" style="margin: 2px 2px 2px 2px; padding:2px 2px 2px 2x;height:auto;width:'.$bild_breite.'; float:'.$bild_float.'; border:'.$bild_border.';-moz-border-radius: 8px;-webkit-border-radius: 8px;.border-radius: 8px;" /></a></td>';
-		}
+		echo '<td><a href="'.$link[$i].'">';
+		echo '<img src="'.$baseUploadDir.'/'.$foto[$i].'" style="margin: 2px 2px 2px 2px; padding:2px 2px 2px 2x;height:auto;width:'.$bild_breite.'; float:'.$bild_float.'; border:'.$bild_border.';-moz-border-radius: 8px;-webkit-border-radius: 8px;.border-radius: 8px;" /></a></td>';
 	}
 
-	echo '</tr>';
-	echo '<tr style="border-bottom: #000000 1px dotted;"></tr>';
+	echo '</tr><tr style="border-bottom: #000000 1px dotted;"></tr>';
 }
 echo '</table>';
 
