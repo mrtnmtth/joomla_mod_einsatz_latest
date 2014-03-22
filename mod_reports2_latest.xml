@@ -17,9 +17,8 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="count" type="text" default="5" label="Anzahl anzuzeigender Einsaetze" description="Anzahl anzuzeigender Einsaetze" />
-				<field name="maxchar" type="text" default="25" label="Maximale Anzahl der Zeichen in der Beschreibung" description="Maximale Anzahl der Zeichen in der Beschreibung" />
-				<field name="menu_none" type="text" default="kein Einsatz gefunden" label="kein Einsatz gefunden" description="kein Einsatz gefunden" />
+				<field name="count" type="text" default="5" label="Anzahl anzuzeigender Einsätze" description="Anzahl anzuzeigender Einsätze" />
+				<field name="menu_none" type="text" default="Noch keine Einsätze vorhanden." label="Text falls noch kein Einsatz vorhanden" description="Text falls noch kein Einsatz vorhanden" />
 				<field name="data1" type="radio" default="1" label="Einsatzart anzeigen" description="Einsatzart anzeigen">
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
@@ -32,35 +31,36 @@
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
 				</field>
-				<field name="readontext" type="text" default="" label="Weiterlesen-Text :" description="Feld bitte leer lassen, um kein Weiterlesen-text anzuzeigen" />
-				<field name="umbruch" type="radio" default="0" label="mit Zeilenumbruch anzeigen ?" description="mit Zeilenumbruch anzeigen ?">
+				<field name="maxchar" type="text" default="100" label="Maximale Anzahl der Zeichen in der Beschreibung" description="Maximale Anzahl der Zeichen in der Beschreibung" />
+				<field name="readontext" type="text" default="" label="Weiterlesen-Linktext" description="Feld bitte leer lassen, um keinen Weiterlesen-Link anzuzeigen" />
+				<field name="umbruch" type="radio" default="0" label="mit Zeilenumbruch anzeigen?" description="mit Zeilenumbruch anzeigen?">
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
 				</field>
-				<field name="@spacer" type="spacer" hr="true" />
+				<field name="line1" type="spacer" hr="true" />
 				<field name="bild" type="radio" default="1" label="Einsatzbilder anzeigen" description="Wenn ja ausgewählt ist, wird jeweils das im Einsatzbericht zuerst ausgewählte Bild angezeigt">
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
 				</field>
-				<field name="bild_breite" type="text" default="100px" label="Breite der Bilder (z.B. 100px) : " description="" />
-				<field name="bild_border" type="text" default="1px" label="Rahmenbreite der Bilder (z.B. 1px) : " description="" />
-				<field name="bild_float" type="radio" default="left" label="Float der Bilder : " description="">
+				<field name="bild_breite" type="text" default="100px" label="Breite der Bilder (z.B. 100px)" description="" />
+				<field name="bild_border" type="text" default="1px" label="Rahmenbreite der Bilder (z.B. 1px)" description="" />
+				<field name="bild_float" type="radio" default="left" label="Float der Bilder" description="">
 					<option value="left">links</option>
 					<option value="right">rechts</option>
-					<option value="none">unten</option>
+					<option value="none">unterhalb</option>
 				</field>
 				<field name="tabelle" type="radio" default="1" label="Tabellenrahmen zeichnen" description="Tabellenrahmen anzeigen">
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
 				</field>
-				<field name="@spacer" type="spacer" hr="true" />
-				<field name="@spacer" type="spacer" label="CSS-Einstellungen" />
-				<field name="color_text" type="text" default="ffffff" label="Textfarbe : #" description=""></field>
-				<field name="templatecolor" type="radio" default="1" label="Linkfarbe :" description="Templatefarbe laden">
-					<option value="0">selbst definieren (Bitte Werte unten bearbeiten)</option>
-					<option value="1">aus dem Template laden</option>
+				<field name="line2" type="spacer" hr="true" />
+				<field name="label1" type="spacer" label="&lt;b&gt;CSS-Einstellungen&lt;/b&gt;" />
+				<field name="templatecolor" type="radio" default="1" label="Template überschreiben" description="Templatefarbe laden">
+					<option value="0">ja (Werte unten benutzen)</option>
+					<option value="1">nein</option>
 				</field>
-				<field name="color_alert" type="text" default="ff0000" label="Farbe Einsatzart : #" description="Farbe der Einsatzart"></field>
+				<field name="color_text" type="text" default="ffffff" label="Textfarbe : #" description=""></field>
+				<field name="color_alert" type="text" default="ff0000" label="Farbe Einsatzart: #" description="Farbe der Einsatzart"></field>
 			</fieldset>
 			<fieldset name="advanced">
 				<field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
