@@ -13,7 +13,7 @@ class modReports2Helper
 		//print_r ($fpReports);
 		return $fpReports;
 	}
-	
+
 	function getMenu()
 	{
 		//FIXME: This is a pretty shitty way to determine menu item id
@@ -25,7 +25,7 @@ class modReports2Helper
 		$db->setQuery($query);
 		return $db->loadObject();
 	}
-	
+
 	function getBaseUploadDir() // Bilder-Verzeichniss
 	{
 		$db =& JFactory::getDBO();
@@ -35,6 +35,15 @@ class modReports2Helper
 		$baseUploadDir = !empty($config->imagepath) ?
 			$config->imagepath : 'images'.DS.'com_reports'.DS.'gallery';
 		return $baseUploadDir;
+	}
+
+	// Funktion : Das erste Bild aus der Gallerie als Bild in der Übersicht
+	function getFoto($frontReports, $i)
+	{
+		$db =& JFactory::getDBO();
+		$query = 'SELECT image FROM `#__reports_images` WHERE report_id='.$frontReports[$i]->id;
+		$db->setQuery($query);
+		return $db->loadresult();
 	}
 }
 ?>

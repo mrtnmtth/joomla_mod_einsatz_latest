@@ -41,12 +41,6 @@ if ($count>count($frontReports))
    
 for($i=0; $i < $count; $i++)
    {
-	   
-// Funktion : Das erste Bild aus der Gallerie als Bild in der Übersicht
-$db =& JFactory::getDBO();
-$query = 'SELECT image FROM `#__reports_images` WHERE report_id='.$frontReports[$i]->id;
-$db->setQuery($query);
-$foto[] = $db->loadresult();
 
 
 echo '<tr style="text-align:left;padding: 2px 5px;color:#'.$colortext.';">';

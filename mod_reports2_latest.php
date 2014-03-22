@@ -41,6 +41,8 @@ $title['people'] = 'Mannschaft';
 $frontReports = modReports2Helper::getReports($count);
 $menu = modReports2Helper::getMenu();
 $baseUploadDir = modReports2Helper::getBaseUploadDir();
+for($i=0; $i < $count; $i++)
+	$foto[$i] = modReports2Helper::getFoto($frontReports, $i);
 
 require(JModuleHelper::getLayoutPath($module->module));
 
