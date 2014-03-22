@@ -18,7 +18,6 @@ $readontext = $params->get('readontext', '');
 $bild = $params->get('bild', '1');
 $bild_breite = $params->get('bild_breite', '1');
 $bild_float = $params->get('bild_float', '1');
-$bild_border = $params->get('bild_border', '1');
 
 $display['data1'] = $params->get('data1', '1');
 $display['address'] = $params->get('address', '0');

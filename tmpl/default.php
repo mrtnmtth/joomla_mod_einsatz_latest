@@ -10,9 +10,11 @@ table.modReports {
 }
 tr.modReports, td.modReports {
 	text-align: left;
-	padding: 2px 5px;
-	color: #'.$colortext.';
-}
+	padding: 2px 5px;';
+	
+if ($display[templatecolor] != '1') echo 'color: #'.$colortext.';';
+
+echo '}
 tr.modReports_dotted {
 	border-bottom: #000000 1px dotted;
 }
@@ -27,11 +29,9 @@ if ($display[templatecolor] != '1') echo 'color: #'.$coloralert.';';
 echo '}
 img.modReports {
 	margin: 2px 2px 2px 2px;
-	padding: 2px 2px 2px 2px;
 	height: auto;
 	width: '.$bild_breite.';
 	float: '.$bild_float.';
-	border: '.$bild_border.';
 }
 </style>';
 

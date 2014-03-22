@@ -43,7 +43,6 @@
 					<option value="1">Ja</option>
 				</field>
 				<field name="bild_breite" type="text" default="100px" label="Breite der Bilder (z.B. 100px)" description="" />
-				<field name="bild_border" type="text" default="1px" label="Rahmenbreite der Bilder (z.B. 1px)" description="" />
 				<field name="bild_float" type="radio" default="left" label="Float der Bilder" description="">
 					<option value="left">links</option>
 					<option value="right">rechts</option>
