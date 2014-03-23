@@ -4,11 +4,11 @@ defined('_JEXEC') or die('Restricted Access');
 $moduleclass_sfx = $params->get( 'moduleclass_sfx' );
 
 echo '<style>
-table.modReports {
+table.modReports2Ticker {
 	border-collapse: collapse;
 	width: 100%;
 }
-div.modReports {
+div.modReports2Ticker {
 	float: left;
 	text-align: left;
 	padding: 2px 5px 5px;';
@@ -16,7 +16,7 @@ div.modReports {
 if ($display[templatecolor] != '1') echo 'color: #'.$colortext.';';
 
 echo '}
-hr.modReports {
+hr.modReports2Ticker {
 	color: transparent;
 	clear: both;
 }
@@ -37,16 +37,16 @@ hr.separator3 {
 	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), '.$separatorcolor.', rgba(0,0,0,0));
 	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), '.$separatorcolor.', rgba(0,0,0,0));
 }
-modReports span {
+modReports2Ticker span {
 	font-weight: bold;
 }
-modReports a {
+modReports2Ticker a {
 	text-decoration: none;';
 	
 if ($display[templatecolor] != '1') echo 'color: #'.$coloralert.';';
 
 echo '}
-img.modReports {
+img.modReports2Ticker {
 	margin: 2px 2px 2px 2px;
 	height: auto;
 	width: '.$bild_breite.';
@@ -66,7 +66,7 @@ for($i=0; $i < $count; $i++)
 		$frontReports[$i]->summary;
  
 	$curTime = strtotime($frontReports[$i]->date1);
-	echo '<div class="modReports">';
+	echo '<div class="modReports2Ticker">';
 	echo '<span>'.date('d.m.Y', $curTime).'</span>&nbsp;&nbsp;';
 
 	if ($display[date1] == '1')
@@ -95,20 +95,20 @@ for($i=0; $i < $count; $i++)
 		echo $frontReports[$i]->summary;
 
 	if ($readontext)
-		echo '<a href="'.$link[$i].'">&nbsp;'.$readontext.'</a>';
+		echo '&nbsp;<a href="'.$link[$i].'">'.$readontext.'</a>';
 
 	echo '</div>';
 
 	if ($bild_float=='none')
-		echo '<hr class="modReports">';
+		echo '<hr class="modReports2Ticker">';
 
 	if (($bild=='1') and ($foto[$i]))
 	{
 		echo '<div><a href="'.$link[$i].'">';
-		echo '<img class="modReports" src="'.$baseUploadDir.'/'.$foto[$i].'" />';
+		echo '<img class="modReports2Ticker" src="'.$baseUploadDir.'/'.$foto[$i].'" />';
 		echo '</a></div>';
 	}
-	echo '<hr class="modReports separator'.$separator.'">';
+	echo '<hr class="modReports2Ticker separator'.$separator.'">';
 }
 
 ?>

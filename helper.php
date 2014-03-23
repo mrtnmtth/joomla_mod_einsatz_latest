@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted Access');
 
-class modReports2Helper
+class modReports2TickerHelper
 {
 	function getReports($count)
 	{

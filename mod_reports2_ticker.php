@@ -39,12 +39,12 @@ $title['boss'] = 'Einsatzleiter';
 $title['people'] = 'Mannschaft';
 
 
-$frontReports = modReports2Helper::getReports($count);
-$menu = modReports2Helper::getMenu();
-$baseUploadDir = modReports2Helper::getBaseUploadDir();
+$frontReports = modReports2TickerHelper::getReports($count);
+$menu = modReports2TickerHelper::getMenu();
+$baseUploadDir = modReports2TickerHelper::getBaseUploadDir();
 for($i=0; $i < $count; $i++)
 {
-	$foto[$i] = modReports2Helper::getFoto($frontReports, $i);
+	$foto[$i] = modReports2TickerHelper::getFoto($frontReports, $i);
 	$link[$i] = JRoute::_('index.php?option=com_reports2&Itemid='.$menu->id.'&view=show&id='.$frontReports[$i]->id);
 }
 

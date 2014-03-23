@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="2.5.0" client="site" method="upgrade">
-	<name>Reports2 latest</name>
+	<name>Einsatzticker</name>
 	<author>mattronic</author>
 	<creationDate>March 2014</creationDate>
 	<copyright></copyright>
@@ -8,7 +8,7 @@
 	<version>0.1</version>
 	<description>Ein Modul zur Anzeige einer Liste der letzten Einsätze für die Komponente com_reports2.</description>
 	<files>
-		<filename module="mod_reports2_latest">mod_reports2_latest.php</filename>
+		<filename module="mod_reports2_ticker">mod_reports2_ticker.php</filename>
 		<filename>helper.php</filename>
 		<filename>index.html</filename>
 		<filename>tmpl/default.php</filename>
