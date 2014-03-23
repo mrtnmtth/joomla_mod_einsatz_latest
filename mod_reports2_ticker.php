@@ -23,6 +23,7 @@ $bild_float = $params->get('bild_float', '1');
 
 $display['data1'] = $params->get('data1', '1');
 $display['address'] = $params->get('address', '0');
+$display['date1'] = $params->get('date1', '1');
 $display['summary'] = $params->get('summary', '1');
 $display['boss'] = $params->get('boss', '0');
 $display['tabelle'] = $params->get('tabelle', '1');
