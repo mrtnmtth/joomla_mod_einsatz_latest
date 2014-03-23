@@ -61,7 +61,6 @@
 				<field name="bild_float" type="radio" default="right" label="Float der Bilder" description="">
 					<option value="left">links</option>
 					<option value="right">rechts</option>
-					<option value="none">unterhalb</option>
 				</field>
 				<field name="line2" type="spacer" hr="true" />
 				<field name="label1" type="spacer" label="&lt;b&gt;CSS-Einstellungen&lt;/b&gt;" />

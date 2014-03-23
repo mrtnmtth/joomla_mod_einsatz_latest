@@ -9,7 +9,6 @@ table.modReports2Ticker {
 	width: 100%;
 }
 div.modReports2Ticker {
-	float: left;
 	text-align: left;
 	padding: 2px 5px 5px;';
 	
@@ -47,7 +46,7 @@ if ($display['templatecolor'] != '1') echo 'color: #'.$coloralert.';';
 
 echo '}
 img.modReports2Ticker {
-	margin: 2px 2px 2px 2px;
+	margin: 2px 10px 2px 10px;
 	height: auto;
 	width: '.$bild_breite.';
 	float: '.$bild_float.';
@@ -61,7 +60,14 @@ for($i=0; $i < $count; $i++)
 {
 	$curTime = strtotime($frontReports[$i]->date1);
 	echo '<div class="modReports2Ticker">';
-	echo '<span>'.date('d.m.Y', $curTime).'</span>&nbsp;&nbsp;';
+
+	if (($bild=='1') and ($foto[$i]))
+	{
+		echo '<a href="'.$link[$i].'">';
+		echo '<img class="modReports2Ticker" src="'.$baseUploadDir.'/'.$foto[$i].'" />';
+		echo '</a>';
+	}
+	echo '<p><span>'.date('d.m.Y', $curTime).'</span>&nbsp;&nbsp;';
 
 	if ($display['date1'] == '1')
 		echo 'um '.date('H:i', $curTime).' Uhr&nbsp;&nbsp;';
@@ -80,7 +86,6 @@ for($i=0; $i < $count; $i++)
 	if ($display['address'] == '1')
 	{
 		echo 'in '.$frontReports[$i]->address.'&nbsp;&nbsp;';
-
 		if ($display['umbruch'] == '1')
 			echo '<br/>';
 	}
@@ -93,22 +98,12 @@ for($i=0; $i < $count; $i++)
 	}
 
 	if ($display['desc'] == '1')
-		echo $frontReports[$i]->desc;
+		echo $frontReports[$i]->desc.'&nbsp;';
 
 	if ($readontext)
-		echo '&nbsp;<a href="'.$link[$i].'">'.$readontext.'</a>';
+		echo '<a href="'.$link[$i].'">'.$readontext.'</a>';
 
-	echo '</div>';
-
-	if ($bild_float=='none')
-		echo '<hr class="modReports2Ticker">';
-
-	if (($bild=='1') and ($foto[$i]))
-	{
-		echo '<div><a href="'.$link[$i].'">';
-		echo '<img class="modReports2Ticker" src="'.$baseUploadDir.'/'.$foto[$i].'" />';
-		echo '</a></div>';
-	}
+	echo '</p></div>';
 	echo '<hr class="modReports2Ticker separator'.$separator.'">';
 }
 
