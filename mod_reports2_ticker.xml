@@ -5,7 +5,7 @@
 	<creationDate>March 2014</creationDate>
 	<copyright></copyright>
 	<license>GNU/GPL</license>
-	<version>0.1</version>
+	<version>0.2</version>
 	<description>Ein Modul zur Anzeige einer Liste der letzten Einsätze für die Komponente com_reports2.</description>
 	<files>
 		<filename module="mod_reports2_ticker">mod_reports2_ticker.php</filename>
