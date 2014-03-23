@@ -37,13 +37,20 @@
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
 				</field>
+				<field name="separator" type="list" default="1" label="Trennlinie" description="Trennlinie zwischen den Einsätzen">
+					<option value="0">keine</option>
+					<option value="1">gepunktet</option>
+					<option value="2">durchgezogen</option>
+					<option value="3">verlaufend</option>
+				</field>
+				<field name="separatorcolor" type="color" default="#333" label="Trennlinienfarbe" description="Farbe der Trennlinien" />
 				<field name="line1" type="spacer" hr="true" />
 				<field name="bild" type="radio" default="1" label="Einsatzbilder anzeigen" description="Wenn ja ausgewählt ist, wird jeweils das im Einsatzbericht zuerst ausgewählte Bild angezeigt">
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
 				</field>
 				<field name="bild_breite" type="text" default="100px" label="Breite der Bilder (z.B. 100px)" description="" />
-				<field name="bild_float" type="radio" default="left" label="Float der Bilder" description="">
+				<field name="bild_float" type="radio" default="right" label="Float der Bilder" description="">
 					<option value="left">links</option>
 					<option value="right">rechts</option>
 					<option value="none">unterhalb</option>

@@ -14,6 +14,8 @@ $menuNone = $params->get('menu_none', 'No Reports Found');
 $selected = $params->get('selected', '1');
 $allselected = $params->get('allselected', '1');
 $readontext = $params->get('readontext', '');
+$separator = $params->get('separator', '1');
+$separatorcolor = $params->get('separatorcolor', '#333');
 
 $bild = $params->get('bild', '1');
 $bild_breite = $params->get('bild_breite', '1');

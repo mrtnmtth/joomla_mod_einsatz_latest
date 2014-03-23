@@ -20,6 +20,23 @@ hr.modReports {
 	color: transparent;
 	clear: both;
 }
+hr.separator0 {}
+hr.separator1 {
+	border: 0;
+	border-bottom: 1px dashed '.$separatorcolor.';
+}
+hr.separator2 {
+	border: 0;
+	border-bottom: 1px solid '.$separatorcolor.';
+}
+hr.separator3 {
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), '.$separatorcolor.', rgba(0,0,0,0));
+	background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), '.$separatorcolor.', rgba(0,0,0,0));
+	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), '.$separatorcolor.', rgba(0,0,0,0));
+	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), '.$separatorcolor.', rgba(0,0,0,0));
+}
 modReports span {
 	font-weight: bold;
 }
@@ -61,7 +78,7 @@ for($i=0; $i < $count; $i++)
 	if ($display[data1] == '1')
 	{
 		echo '<a href="'.$link[$i].'">';
-		echo '<b>'.$frontReports[$i]->data1.'&nbsp;&nbsp;</b></a>';
+		echo '<b>'.$frontReports[$i]->data1.'</b></a>&nbsp;&nbsp;';
 		if ($display[umbruch] == '1')
 			echo '<br/>';
 	}
@@ -88,9 +105,10 @@ for($i=0; $i < $count; $i++)
 	if (($bild=='1') and ($foto[$i]))
 	{
 		echo '<div><a href="'.$link[$i].'">';
-		echo '<img class="modReports" src="'.$baseUploadDir.'/'.$foto[$i].'" /></a></div>';
+		echo '<img class="modReports" src="'.$baseUploadDir.'/'.$foto[$i].'" />';
+		echo '</a></div>';
 	}
-	echo '<hr class="modReports">';
+	echo '<hr class="modReports separator'.$separator.'">';
 }
 
 ?>
