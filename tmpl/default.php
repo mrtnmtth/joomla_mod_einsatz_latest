@@ -57,38 +57,43 @@ for($i=0; $i < $count; $i++)
 		echo '<img src="'.$baseUploadDir.'/'.$foto[$i].'" />';
 		echo '</a>';
 	}
-	echo '<p><span>'.date('d.m.Y', $curTime).'</span>&nbsp;&nbsp;';
-
-	if ($display['date1'])
-		echo 'um '.date('H:i', $curTime).' Uhr&nbsp;&nbsp;';
-
+	
+	echo '<p>';
+	
 	if ($display['umbruch'])
-		echo '<br/>';
-
-	if ($display['data1'])
 	{
-		echo '<a href="'.$link[$i].'">';
-		echo '<b>'.$frontReports[$i]->data1.'</b></a>&nbsp;&nbsp;';
-		if ($display['umbruch']) echo '<br/>';
+		echo '<span>'.date('d.m.Y', $curTime).'</span>';
+		if ($display['date1'])
+			echo 'um '.date('H:i', $curTime).' Uhr';
+		echo '<br />';
+		if ($display['data1'])
+			echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->data1.'</b></a><br />';
+		if ($display['address'])
+			echo $frontReports[$i]->address.'<br />';
+		if ($display['summary'])
+			echo $frontReports[$i]->summary.'<br />';
+		if (($display['desc']) and ($frontReports[$i]->desc))
+			echo $frontReports[$i]->desc.' <b>...</b> ';
+		if ($readontext)
+			echo '<a href="'.$link[$i].'">'.$readontext.'</a>';
 	}
-
-	if ($display['address'])
+	else
 	{
-		echo 'in '.$frontReports[$i]->address.'&nbsp;&nbsp;';
-		if ($display['umbruch']) echo '<br/>';
+		echo '<span>'.date('d.m.Y', $curTime).'</span>';
+		if ($display['date1'])
+			echo ' um '.date('H:i', $curTime).' Uhr';
+		echo ', ';
+		if ($display['data1'])
+			echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->data1.'</b></a> ';
+		if ($display['address'])
+			echo 'in '.$frontReports[$i]->address.'. ';
+		if ($display['summary'])
+			echo '| '.$frontReports[$i]->summary.' ';
+		if (($display['desc']) and ($frontReports[$i]->desc))
+			echo '| '.$frontReports[$i]->desc.' <b>...</b> ';
+		if ($readontext)
+			echo '<a href="'.$link[$i].'">'.$readontext.'</a>';
 	}
-   
-	if ($display['summary'])
-	{
-		echo $frontReports[$i]->summary.'&nbsp;&nbsp;';
-		if ($display['umbruch']) echo '<br/>';
-	}
-
-	if ($display['desc'])
-		echo $frontReports[$i]->desc.'&nbsp;';
-
-	if ($readontext)
-		echo '<a href="'.$link[$i].'">'.$readontext.'</a>';
 
 	echo '</p></div>';
 	echo '<hr class="modReports2Ticker separator'.$separator.'">';
