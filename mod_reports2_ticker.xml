@@ -68,8 +68,8 @@
 					<option value="0">ja (Werte unten benutzen)</option>
 					<option value="1">nein</option>
 				</field>
-				<field name="color_text" type="text" default="ffffff" label="Textfarbe : #" description=""></field>
-				<field name="color_alert" type="text" default="ff0000" label="Farbe Einsatzart: #" description="Farbe der Einsatzart"></field>
+				<field name="color_text" type="color" default="#000" label="Textfarbe" description=""></field>
+				<field name="color_alert" type="color" default="#f00" label="Linkfarbe" description="Farbe des Einsatzart- und Weiterlesen-Links"></field>
 			</fieldset>
 			<fieldset name="advanced">
 				<field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
