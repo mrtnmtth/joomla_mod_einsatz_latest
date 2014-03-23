@@ -1,56 +1,53 @@
 <?php
 defined('_JEXEC') or die('Restricted Access');
+?>
 
-echo '<style>
+<style>
 table.modReports2Ticker {
 	border-collapse: collapse;
 	width: 100%;
 }
 div.modReports2Ticker {
 	text-align: left;
-	padding: 2px 5px 5px;';
-	
-if ($display['templatecolor'] != '1') echo 'color: #'.$colortext.';';
-
-echo '}
+	padding: 2px 5px 5px;
+	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$colortext.';'; ?>
+}
 hr.modReports2Ticker {
 	color: transparent;
 	clear: both;
 }
-hr.separator0 {}
 hr.separator1 {
 	border: 0;
-	border-bottom: 1px dashed '.$separatorcolor.';
+	border-bottom: 1px dashed <?php echo '.$separatorcolor.'; ?>
 }
 hr.separator2 {
 	border: 0;
-	border-bottom: 1px solid '.$separatorcolor.';
+	border-bottom: 1px solid <?php echo '.$separatorcolor.'; ?>
 }
 hr.separator3 {
 	border: 0;
 	height: 1px;
-	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), '.$separatorcolor.', rgba(0,0,0,0));
-	background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), '.$separatorcolor.', rgba(0,0,0,0));
-	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), '.$separatorcolor.', rgba(0,0,0,0));
-	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), '.$separatorcolor.', rgba(0,0,0,0));
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), <?php echo '.$separatorcolor.'; ?>, rgba(0,0,0,0));
+	background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), <?php echo '.$separatorcolor.'; ?>, rgba(0,0,0,0));
+	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), <?php echo '.$separatorcolor.'; ?>, rgba(0,0,0,0));
+	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), <?php echo '.$separatorcolor.'; ?>, rgba(0,0,0,0));
 }
 modReports2Ticker span {
 	font-weight: bold;
 }
 modReports2Ticker a {
 	text-decoration: none;';
-	
-if ($display['templatecolor'] != '1') echo 'color: #'.$coloralert.';';
-
-echo '}
+	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$coloralert.';'; ?>
+}
 img.modReports2Ticker {
 	margin: 2px 10px 2px 10px;
 	height: auto;
-	width: '.$bild_breite.';
-	float: '.$bild_float.';
+	width: <?php echo '.$bild_breite.'; ?>
+	float: <?php echo '.$bild_float.'; ?>
 }
-</style>';
+</style>
 
+<?php
 if ($count>count($frontReports))
 	$count=count($frontReports);
 
