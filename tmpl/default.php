@@ -4,8 +4,6 @@ defined('_JEXEC') or die('Restricted Access');
 
 <style>
 div.modReports2Ticker {
-	text-align: left;
-	padding: 2px 5px 5px;
 	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$colortext.';'."\n"; ?>
 }
 hr.modReports2Ticker {
@@ -34,8 +32,11 @@ div.modReports2Ticker span {
 div.modReports2Ticker a {
 	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$coloralert.' !important;'."\n"; ?>
 }
+div.modReports2Ticker p {
+	margin: 0px 10px 0px 10px;
+}
 div.modReports2Ticker img {
-	margin: 2px 10px 2px 10px;
+	margin: 2px 10px 8px 10px;
 	height: auto;
 	width: <?php echo $bild_breite; ?>;
 	float: <?php echo $bild_float; ?>;
