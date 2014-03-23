@@ -13,7 +13,7 @@ div.modReports2Ticker {
 	text-align: left;
 	padding: 2px 5px 5px;';
 	
-if ($display[templatecolor] != '1') echo 'color: #'.$colortext.';';
+if ($display['templatecolor'] != '1') echo 'color: #'.$colortext.';';
 
 echo '}
 hr.modReports2Ticker {
@@ -43,7 +43,7 @@ modReports2Ticker span {
 modReports2Ticker a {
 	text-decoration: none;';
 	
-if ($display[templatecolor] != '1') echo 'color: #'.$coloralert.';';
+if ($display['templatecolor'] != '1') echo 'color: #'.$coloralert.';';
 
 echo '}
 img.modReports2Ticker {
@@ -63,36 +63,36 @@ for($i=0; $i < $count; $i++)
 	echo '<div class="modReports2Ticker">';
 	echo '<span>'.date('d.m.Y', $curTime).'</span>&nbsp;&nbsp;';
 
-	if ($display[date1] == '1')
+	if ($display['date1'] == '1')
 		echo 'um '.date('H:i', $curTime).' Uhr&nbsp;&nbsp;';
 
-	if ($display[umbruch] == '1')
+	if ($display['umbruch'] == '1')
 		echo '<br/>';
 
-	if ($display[data1] == '1')
+	if ($display['data1'] == '1')
 	{
 		echo '<a href="'.$link[$i].'">';
 		echo '<b>'.$frontReports[$i]->data1.'</b></a>&nbsp;&nbsp;';
-		if ($display[umbruch] == '1')
+		if ($display['umbruch'] == '1')
 			echo '<br/>';
 	}
 
-	if ($display[address] == '1')
+	if ($display['address'] == '1')
 	{
 		echo 'in '.$frontReports[$i]->address.'&nbsp;&nbsp;';
 
-		if ($display[umbruch] == '1')
+		if ($display['umbruch'] == '1')
 			echo '<br/>';
 	}
    
-	if ($display[summary] == '1')
+	if ($display['summary'] == '1')
 	{
 		echo $frontReports[$i]->summary.'&nbsp;&nbsp;';
-		if ($display[umbruch] == '1')
+		if ($display['umbruch'] == '1')
 			echo '<br/>';
 	}
 
-	if ($display[desc] == '1')
+	if ($display['desc'] == '1')
 		echo $frontReports[$i]->desc;
 
 	if ($readontext)
