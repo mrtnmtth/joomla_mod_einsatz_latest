@@ -5,6 +5,7 @@ defined('_JEXEC') or die('Restricted Access');
 <style>
 div.modReports2Ticker {
 	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$colortext.';'."\n"; ?>
+	width: <?php echo $modulewidth; ?>;
 }
 hr.modReports2Ticker {
 	color: transparent;

@@ -73,6 +73,7 @@
 			</fieldset>
 			<fieldset name="advanced">
 				<field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="modulewidth" type="text" default="100%" label="Modulbreite" description="Breite des Moduls (z.B. 100% oder 240px)" />
 			</fieldset>
 		</fields>
 	</config>

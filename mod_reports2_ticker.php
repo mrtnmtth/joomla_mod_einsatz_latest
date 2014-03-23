@@ -5,6 +5,7 @@ defined('_JEXEC') or die('Illegal Access');
 require_once(dirname(__FILE__).DS.'helper.php');
 
 $moduleclass_sfx = $params->get('moduleclass_sfx', '');
+$modulewidth = $params->get('modulewidth', '100%');
 
 $colortext = $params->get('color_text', 'cccccc');
 $coloralert = $params->get('color_alert', 'ff0000');
