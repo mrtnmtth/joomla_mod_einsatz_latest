@@ -35,7 +35,11 @@
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
 				</field>
-				<field name="maxchar" type="text" default="100" label="Maximale Anzahl der Zeichen in der Beschreibung" description="Maximale Anzahl der Zeichen in der Beschreibung" />
+				<field name="desc" type="radio" default="0" label="ausführliche Einsatzbeschreibung anzeigen" description="ausführliche Einsatzbeschreibung anzeigen">
+					<option value="0">Nein</option>
+					<option value="1">Ja</option>
+				</field>
+				<field name="maxchar" type="text" default="250" label="Maximale Anzahl der Zeichen in der Beschreibung" description="Maximale Anzahl der Zeichen in der Beschreibung" />
 				<field name="readontext" type="text" default="" label="Weiterlesen-Linktext" description="Feld bitte leer lassen, um keinen Weiterlesen-Link anzuzeigen" />
 				<field name="umbruch" type="radio" default="0" label="mit Zeilenumbruch anzeigen?" description="mit Zeilenumbruch anzeigen?">
 					<option value="0">Nein</option>

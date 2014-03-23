@@ -45,5 +45,12 @@ class modReports2TickerHelper
 		$db->setQuery($query);
 		return $db->loadresult();
 	}
+
+	function trimDesc($desc, $max){
+		// remove html
+		$desc = strip_tags($desc);
+		$desc = substr($desc, 0, strrpos(substr($desc, 0, $max+1), ' '));
+		return $desc;
+	}
 }
 ?>

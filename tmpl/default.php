@@ -59,12 +59,6 @@ if ($count>count($frontReports))
 
 for($i=0; $i < $count; $i++)
 {
-	$frontReports[$i]->summary =
-		(strlen($frontReports[$i]->summary) > $display[maxchar]) ?
-		substr($frontReports[$i]->summary,0,strrpos(substr
-		($frontReports[$i]->summary,0,$display[maxchar]+1),' ')) :
-		$frontReports[$i]->summary;
- 
 	$curTime = strtotime($frontReports[$i]->date1);
 	echo '<div class="modReports2Ticker">';
 	echo '<span>'.date('d.m.Y', $curTime).'</span>&nbsp;&nbsp;';
@@ -92,7 +86,14 @@ for($i=0; $i < $count; $i++)
 	}
    
 	if ($display[summary] == '1')
-		echo $frontReports[$i]->summary;
+	{
+		echo $frontReports[$i]->summary.'&nbsp;&nbsp;';
+		if ($display[umbruch] == '1')
+			echo '<br/>';
+	}
+
+	if ($display[desc] == '1')
+		echo $frontReports[$i]->desc;
 
 	if ($readontext)
 		echo '&nbsp;<a href="'.$link[$i].'">'.$readontext.'</a>';
