@@ -1,8 +1,6 @@
 <?php
 defined('_JEXEC') or die('Restricted Access');
 
-$moduleclass_sfx = $params->get( 'moduleclass_sfx' );
-
 echo '<style>
 table.modReports2Ticker {
 	border-collapse: collapse;
@@ -59,7 +57,7 @@ if ($count>count($frontReports))
 for($i=0; $i < $count; $i++)
 {
 	$curTime = strtotime($frontReports[$i]->date1);
-	echo '<div class="modReports2Ticker">';
+	echo '<div class="modReports2Ticker '.$moduleclass_sfx.'">';
 
 	if (($bild=='1') and ($foto[$i]))
 	{
