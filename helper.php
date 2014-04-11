@@ -3,9 +3,9 @@ defined('_JEXEC') or die('Restricted Access');
 
 class modReports2TickerHelper
 {
-	function getReports($count)
+	static function getReports($count)
 	{
-		$db =& JFactory::getDBO();
+		$db = JFactory::getDBO();
 		$query = 'SELECT * FROM `#__reports` WHERE published=1
 			ORDER BY date1 DESC LIMIT '.$count;
 		$db->setQuery($query);
@@ -14,10 +14,10 @@ class modReports2TickerHelper
 		return $fpReports;
 	}
 
-	function getMenu()
+	static function getMenu()
 	{
 		//FIXME: This is a pretty shitty way to determine menu item id
-		$db =& JFactory::getDBO();
+		$db = JFactory::getDBO();
 		$query = '
 			SELECT id, link FROM `#__menu` WHERE `link`
 			LIKE "%index.php?option=com_reports2&view=home&hauptlink=1%"
@@ -26,9 +26,9 @@ class modReports2TickerHelper
 		return $db->loadObject();
 	}
 
-	function getBaseUploadDir() // Bilder-Verzeichniss
+	static function getBaseUploadDir() // Bilder-Verzeichniss
 	{
-		$db =& JFactory::getDBO();
+		$db = JFactory::getDBO();
 		$query ='SELECT * FROM `#__reports_config` LIMIT 1';
 		$db->setQuery($query);
 		$config = $db->loadObject();
@@ -38,15 +38,15 @@ class modReports2TickerHelper
 	}
 
 	// Funktion : Das erste Bild aus der Gallerie als Bild in der Übersicht
-	function getFoto($frontReports, $i)
+	static function getFoto($frontReports, $i)
 	{
-		$db =& JFactory::getDBO();
+		$db = JFactory::getDBO();
 		$query = 'SELECT image FROM `#__reports_images` WHERE report_id='.$frontReports[$i]->id;
 		$db->setQuery($query);
 		return $db->loadresult();
 	}
 
-	function trimDesc($desc, $max){
+	static function trimDesc($desc, $max){
 		// remove html
 		$desc = strip_tags($desc);
 		$desc = substr($desc, 0, strrpos(substr($desc, 0, $max+1), ' '));
