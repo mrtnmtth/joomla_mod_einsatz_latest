@@ -1,6 +1,7 @@
 <?php
 
 defined('_JEXEC') or die('Illegal Access');
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
 require_once(dirname(__FILE__).DS.'helper.php');
 

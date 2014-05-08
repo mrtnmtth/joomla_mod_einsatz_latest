@@ -1,5 +1,6 @@
 <?php
 defined('_JEXEC') or die('Restricted Access');
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
 class modReports2TickerHelper
 {
