@@ -3,11 +3,11 @@ defined('_JEXEC') or die('Restricted Access');
 ?>
 
 <style>
-div.modReports2Ticker {
+div.reportsticker {
 	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$colortext.';'."\n"; ?>
 	width: <?php echo $modulewidth; ?>;
 }
-hr.modReports2Ticker {
+hr.reportsticker {
 	color: transparent;
 	clear: both;
 }
@@ -27,16 +27,16 @@ hr.separator3 {
 	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), <?php echo $separatorcolor; ?>, rgba(0,0,0,0));
 	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), <?php echo $separatorcolor; ?>, rgba(0,0,0,0));
 }
-div.modReports2Ticker span {
+div.reportsticker span {
 	font-weight: bold;
 }
-div.modReports2Ticker a {
+div.reportsticker a {
 	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$coloralert.' !important;'."\n"; ?>
 }
-div.modReports2Ticker p {
+div.reportsticker p {
 	margin: 0px 10px 0px 10px;
 }
-div.modReports2Ticker img {
+div.reportsticker img {
 	margin: 2px 10px 8px 10px;
 	height: auto;
 	width: <?php echo $bild_breite; ?>;
@@ -51,7 +51,7 @@ if ($count>count($frontReports))
 for($i=0; $i < $count; $i++)
 {
 	$curTime = strtotime($frontReports[$i]->date1);
-	echo '<div class="modReports2Ticker '.$moduleclass_sfx.'">';
+	echo '<div class="reportsticker'.$moduleclass_sfx.'">';
 
 	if (($bild=='1') and ($foto[$i]))
 	{
@@ -66,7 +66,7 @@ for($i=0; $i < $count; $i++)
 	{
 		echo '<span>'.date('d.m.Y', $curTime).'</span>';
 		if ($display['date1'])
-			echo 'um '.date('H:i', $curTime).' Uhr';
+			echo ' um '.date('H:i', $curTime).' Uhr';
 		echo '<br />';
 		if ($display['data1'])
 			echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->data1.'</b></a><br />';
@@ -98,7 +98,7 @@ for($i=0; $i < $count; $i++)
 	}
 
 	echo '</p></div>';
-	echo '<hr class="modReports2Ticker separator'.$separator.'">';
+	echo '<hr class="reportsticker separator'.$separator.'">';
 }
 
 ?>
