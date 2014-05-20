@@ -50,6 +50,12 @@ for($i=0; $i < $count; $i++)
 {
 	$frontReports[$i]->desc = modReports2TickerHelper::trimDesc($frontReports[$i]->desc, $maxchar);
 	$foto[$i] = modReports2TickerHelper::getFoto($frontReports, $i);
+	if ($foto[$i])
+	{
+		$thumb[$i] = modReports2TickerHelper::createThumb($baseUploadDir.'/'.$foto[$i], $bild_breite);
+	} else {
+		$thumb[$i] = false;
+	}
 	$link[$i] = JRoute::_('index.php?option=com_reports2&Itemid='.$menu->id.'&view=show&id='.$frontReports[$i]->id);
 }
 

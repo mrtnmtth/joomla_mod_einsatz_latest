@@ -2,6 +2,8 @@
 defined('_JEXEC') or die('Restricted Access');
 if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
+jimport('joomla.image.image');
+
 class modReports2TickerHelper
 {
 	static function getReports($count)
@@ -45,6 +47,30 @@ class modReports2TickerHelper
 		$query = 'SELECT image FROM `#__reports_images` WHERE report_id='.$frontReports[$i]->id;
 		$db->setQuery($query);
 		return $db->loadresult();
+	}
+	
+	static function createThumb($path, $width)
+	{
+		$thumbsFolder = dirname($path) . '/thumbs';
+		if (!is_dir($thumbsFolder) && (!is_dir(dirname($thumbsFolder)) || !@mkdir($thumbsFolder)))
+		{
+			throw new InvalidArgumentException('Folder does not exist and cannot be created: ' . $thumbsFolder);
+		}
+		$filename = pathinfo($path, PATHINFO_FILENAME);
+		$fileExtension = pathinfo($path, PATHINFO_EXTENSION);
+		$thumbFileName = $filename . '_' . $width . '.' . $fileExtension;
+		$thumbFileName = $thumbsFolder . '/' . $thumbFileName;
+		//check if thumb is already present
+		if (file_exists($thumbFileName))
+		{
+			return $thumbFileName;
+		}
+		$image = new JImage($path);
+		$thumb = $image->resize($width, $width);
+		$imgProperties = JImage::getImageFileProperties($path);
+		//write file to disk
+		$thumb->toFile($thumbFileName, $imgProperties->type);
+		return $thumbFileName;
 	}
 
 	static function trimDesc($desc, $max){

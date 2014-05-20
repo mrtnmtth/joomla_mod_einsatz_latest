@@ -53,10 +53,10 @@ for($i=0; $i < $count; $i++)
 	$curTime = strtotime($frontReports[$i]->date1);
 	echo '<div class="reportsticker'.$moduleclass_sfx.'">';
 
-	if (($bild=='1') and ($foto[$i]))
+	if (($bild=='1') and ($thumb[$i]))
 	{
 		echo '<a href="'.$link[$i].'">';
-		echo '<img src="'.$baseUploadDir.'/'.$foto[$i].'" />';
+		echo '<img src="'.$thumb[$i].'" />';
 		echo '</a>';
 	}
 	
