@@ -43,20 +43,13 @@ $title['boss'] = 'Einsatzleiter';
 $title['people'] = 'Mannschaft';
 
 
+$menulink = JComponentHelper::getParams('com_einsatzkomponente')->get('homelink');
 $frontReports = modReports2TickerHelper::getReports($count);
-$menu = modReports2TickerHelper::getMenu();
-$baseUploadDir = modReports2TickerHelper::getBaseUploadDir();
 for($i=0; $i < $count; $i++)
 {
 	$frontReports[$i]->desc = modReports2TickerHelper::trimDesc($frontReports[$i]->desc, $maxchar);
-	$foto[$i] = modReports2TickerHelper::getFoto($frontReports, $i);
-	if ($foto[$i])
-	{
-		$thumb[$i] = modReports2TickerHelper::createThumb($baseUploadDir.'/'.$foto[$i], $bild_breite);
-	} else {
-		$thumb[$i] = false;
-	}
-	$link[$i] = JRoute::_('index.php?option=com_reports2&Itemid='.$menu->id.'&view=show&id='.$frontReports[$i]->id);
+	$thumb[$i] = $frontReports[$i]->image;
+	$link[$i] = JRoute::_('index.php?option=com_einsatzkomponente&Itemid='.$menulink.'&view=einsatzbericht&id='.$frontReports[$i]->id);
 }
 
 require(JModuleHelper::getLayoutPath($module->module));
