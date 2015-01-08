@@ -6,19 +6,6 @@ defined('_JEXEC') or die('Restricted Access');
 div.reportsticker {
 	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$colortext.';'."\n"; ?>
 	width: <?php echo $modulewidth; ?>;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-<?php if ($bild_float == 'right') : ?>
-	-webkit-flex-direction: row-reverse;
-	    -ms-flex-direction: row-reverse;
-	        flex-direction: row-reverse;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	<?php endif; ?>
 }
 hr.reportsticker {
 	color: transparent;
@@ -66,7 +53,7 @@ for($i=0; $i < $count; $i++)
 	$curTime = strtotime($frontReports[$i]->date1);
 	echo '<div class="reportsticker'.$moduleclass_sfx.'">';
 
-	if (($bild=='1') and ($thumb[$i]))
+	if (($bild=='1') and ($thumb[$i]) and !(strpos($thumb[$i],'nopic')))
 	{
 		echo '<a href="'.$link[$i].'">';
 		echo '<img src="'.$thumb[$i].'" />';
