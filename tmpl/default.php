@@ -7,6 +7,10 @@ div.reportsticker {
 	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$colortext.';'."\n"; ?>
 	width: <?php echo $modulewidth; ?>;
 }
+div.reportsticker:hover {
+	background-color: #F5F5FF;
+	cursor: pointer;
+}
 hr.reportsticker {
 	color: transparent;
 	clear: both;
@@ -51,7 +55,7 @@ if ($count>count($frontReports))
 for($i=0; $i < $count; $i++)
 {
 	$curTime = strtotime($frontReports[$i]->date1);
-	echo '<div class="reportsticker'.$moduleclass_sfx.'">';
+	echo '<div class="reportsticker'.$moduleclass_sfx.'" onclick="parent.location=\''.$link[$i].'\'">';
 
 	if (($bild=='1') and ($thumb[$i]) and !(strpos($thumb[$i],'nopic')))
 	{
