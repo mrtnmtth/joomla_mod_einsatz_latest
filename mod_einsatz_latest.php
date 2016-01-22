@@ -30,7 +30,6 @@ $display['summary'] = $params->get('summary', '1');
 $display['boss'] = $params->get('boss', '0');
 $display['desc'] = $params->get('desc', '0');
 $display['maxchar'] = $params->get('maxchar', '1');
-$display['umbruch'] = $params->get('umbruch', '0');
 $display['templatecolor'] = $params->get('templatecolor', '1');
 $title['einsatzart'] = 'Einsatzart';
 $title['address'] = 'Adresse';

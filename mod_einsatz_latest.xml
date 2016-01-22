@@ -41,10 +41,6 @@
 				</field>
 				<field name="maxchar" type="text" default="250" label="Maximale Anzahl der Zeichen in der Beschreibung" description="Maximale Anzahl der Zeichen in der Beschreibung" />
 				<field name="readontext" type="text" default="" label="Weiterlesen-Linktext" description="Feld bitte leer lassen, um keinen Weiterlesen-Link anzuzeigen" />
-				<field name="umbruch" type="list" default="0" label="Layout-Stil" description="Layout-Stil">
-					<option value="0">Einzeiler</option>
-					<option value="1">Umgebrochen</option>
-				</field>
 				<field name="separator" type="list" default="1" label="Trennlinie" description="Trennlinie zwischen den Einsätzen">
 					<option value="0">keine</option>
 					<option value="1">gestrichelt</option>

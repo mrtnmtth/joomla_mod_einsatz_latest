@@ -57,41 +57,21 @@ for($i=0; $i < $count; $i++)
 	}
 	
 	echo '<p>';
-	
-	if ($display['umbruch'])
-	{
-		echo '<span>'.date('d.m.Y', $curTime).'</span>';
-		if ($display['date1'])
-			echo ' um '.date('H:i', $curTime).' Uhr';
-		echo '<br />';
-		if ($display['einsatzart'])
-			echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->title.'</b></a><br />';
-		if ($display['address'])
-			echo $frontReports[$i]->address.'<br />';
-		if ($display['summary'])
-			echo $frontReports[$i]->summary.'<br />';
-		if (($display['desc']) and ($frontReports[$i]->desc))
-			echo $frontReports[$i]->desc.' <b>...</b> ';
-		if ($readontext)
-			echo '<a href="'.$link[$i].'">'.$readontext.'</a>';
-	}
-	else
-	{
-		echo '<span>'.date('d.m.Y', $curTime).'</span>';
-		if ($display['date1'])
-			echo ' um '.date('H:i', $curTime).' Uhr';
-		echo ', ';
-		if ($display['einsatzart'])
-			echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->title.'</b></a> ';
-		if ($display['address'])
-			echo 'in '.$frontReports[$i]->address.'. ';
-		if ($display['summary'])
-			echo '| '.$frontReports[$i]->summary.' ';
-		if (($display['desc']) and ($frontReports[$i]->desc))
-			echo '| '.$frontReports[$i]->desc.' <b>...</b> ';
-		if ($readontext)
-			echo '<a href="'.$link[$i].'">'.$readontext.'</a>';
-	}
+
+	echo '<span>'.date('d.m.Y', $curTime).'</span>';
+	if ($display['date1'])
+		echo ' um '.date('H:i', $curTime).' Uhr';
+	echo '<br />';
+	if ($display['einsatzart'])
+		echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->title.'</b></a><br />';
+	if ($display['address'])
+		echo $frontReports[$i]->address.'<br />';
+	if ($display['summary'])
+		echo $frontReports[$i]->summary.'<br />';
+	if (($display['desc']) and ($frontReports[$i]->desc))
+		echo $frontReports[$i]->desc.' <b>...</b> ';
+	if ($readontext)
+		echo '<a href="'.$link[$i].'">'.$readontext.'</a>';
 
 	echo '</p></div>';
 	echo '<hr class="einsatz_latest separator'.$separator.'">';
