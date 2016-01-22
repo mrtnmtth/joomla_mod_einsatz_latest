@@ -23,14 +23,6 @@ hr.separator2 {
 	border: 0;
 	border-bottom: 1px solid <?php echo $separatorcolor; ?>;
 }
-hr.separator3 {
-	border: 0;
-	height: 1px;
-	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), <?php echo $separatorcolor; ?>, rgba(0,0,0,0));
-	background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), <?php echo $separatorcolor; ?>, rgba(0,0,0,0));
-	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), <?php echo $separatorcolor; ?>, rgba(0,0,0,0));
-	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), <?php echo $separatorcolor; ?>, rgba(0,0,0,0));
-}
 div.einsatz_latest span {
 	font-weight: bold;
 }

@@ -47,9 +47,8 @@
 				</field>
 				<field name="separator" type="list" default="1" label="Trennlinie" description="Trennlinie zwischen den Einsätzen">
 					<option value="0">keine</option>
-					<option value="1">gepunktet</option>
+					<option value="1">gestrichelt</option>
 					<option value="2">durchgezogen</option>
-					<option value="3">verlaufend</option>
 				</field>
 				<field name="separatorcolor" type="color" default="#333" label="Trennlinienfarbe" description="Farbe der Trennlinien" />
 				<field name="line1" type="spacer" hr="true" />
