@@ -3,15 +3,15 @@ defined('_JEXEC') or die('Restricted Access');
 ?>
 
 <style>
-div.reportsticker {
+div.einsatz_latest {
 	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$colortext.';'."\n"; ?>
 	width: <?php echo $modulewidth; ?>;
 }
-div.reportsticker:hover {
+div.einsatz_latest:hover {
 	background-color: #F5F5FF;
 	cursor: pointer;
 }
-hr.reportsticker {
+hr.einsatz_latest {
 	color: transparent;
 	clear: both;
 }
@@ -31,16 +31,16 @@ hr.separator3 {
 	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), <?php echo $separatorcolor; ?>, rgba(0,0,0,0));
 	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), <?php echo $separatorcolor; ?>, rgba(0,0,0,0));
 }
-div.reportsticker span {
+div.einsatz_latest span {
 	font-weight: bold;
 }
-div.reportsticker a {
+div.einsatz_latest a {
 	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$coloralert.' !important;'."\n"; ?>
 }
-div.reportsticker p {
+div.einsatz_latest p {
 	margin: 0px 10px 0px 10px;
 }
-div.reportsticker img {
+div.einsatz_latest img {
 	margin: 2px 10px 8px 10px;
 	height: auto;
 	width: <?php echo $bild_breite; ?>;
@@ -55,7 +55,7 @@ if ($count>count($frontReports))
 for($i=0; $i < $count; $i++)
 {
 	$curTime = strtotime($frontReports[$i]->date1);
-	echo '<div class="reportsticker'.$moduleclass_sfx.'" onclick="parent.location=\''.$link[$i].'\'">';
+	echo '<div class="einsatz_latest'.$moduleclass_sfx.'" onclick="parent.location=\''.$link[$i].'\'">';
 
 	if (($bild=='1') and ($thumb[$i]) and !(strpos($thumb[$i],'nopic')))
 	{
@@ -102,7 +102,7 @@ for($i=0; $i < $count; $i++)
 	}
 
 	echo '</p></div>';
-	echo '<hr class="reportsticker separator'.$separator.'">';
+	echo '<hr class="einsatz_latest separator'.$separator.'">';
 }
 
 ?>
