@@ -2,7 +2,7 @@
 
 defined('_JEXEC') or die('Illegal Access');
 
-require_once(dirname(__FILE__).DS.'helper.php');
+require_once(dirname(__FILE__)'/helper.php');
 
 $moduleclass_sfx = $params->get('moduleclass_sfx', '');
 $modulewidth = $params->get('modulewidth', '100%');
