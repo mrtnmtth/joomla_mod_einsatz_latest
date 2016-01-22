@@ -4,7 +4,7 @@ if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
 jimport('joomla.image.image');
 
-class modReports2TickerHelper
+class modEinsatzLatestHelper
 {
 	static function getReports($count)
 	{

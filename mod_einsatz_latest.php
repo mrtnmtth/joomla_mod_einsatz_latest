@@ -44,10 +44,10 @@ $title['people'] = 'Mannschaft';
 
 
 $menulink = JComponentHelper::getParams('com_einsatzkomponente')->get('homelink');
-$frontReports = modReports2TickerHelper::getReports($count);
+$frontReports = modEinsatzLatestHelper::getReports($count);
 for($i=0; $i < $count; $i++)
 {
-	$frontReports[$i]->desc = modReports2TickerHelper::trimDesc($frontReports[$i]->desc, $maxchar);
+	$frontReports[$i]->desc = modEinsatzLatestHelper::trimDesc($frontReports[$i]->desc, $maxchar);
 	$thumb[$i] = $frontReports[$i]->image;
 	$link[$i] = JRoute::_('index.php?option=com_einsatzkomponente&Itemid='.$menulink.'&view=einsatzbericht&id='.$frontReports[$i]->id);
 }
