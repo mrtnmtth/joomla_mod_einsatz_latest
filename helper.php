@@ -1,8 +1,5 @@
 <?php
 defined('_JEXEC') or die('Restricted Access');
-if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
-
-jimport('joomla.image.image');
 
 class modEinsatzLatestHelper
 {
@@ -14,7 +11,6 @@ class modEinsatzLatestHelper
 			WHERE b.state=1 ORDER BY date1 DESC LIMIT '.$count;
 		$db->setQuery($query);
 		$fpReports = $db->loadObjectList();
-		//print_r ($fpReports);
 		return $fpReports;
 	}
 
