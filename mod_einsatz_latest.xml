@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="2.5.0" client="site" method="upgrade">
+<extension type="module" version="3.0" client="site" method="upgrade">
 	<name>letzte Einsätze</name>
 	<author>mattronic</author>
 	<creationDate>January 2015</creationDate>
@@ -77,4 +77,8 @@
 			</fieldset>
 		</fields>
 	</config>
+
+	<updateservers>
+		<server type="extension" name="letzte Einsätze Updates">https://raw.githubusercontent.com/mttronc/joomla_mod_einsatz_latest/master/update.xml</server>
+	</updateservers>
 </extension>
