@@ -5,7 +5,7 @@
 	<creationDate>January 2016</creationDate>
 	<copyright></copyright>
 	<license>GNU/GPL</license>
-	<version>0.9.1</version>
+	<version>0.9.2</version>
 	<description>Modul zur Anzeige einer Liste der letzten Einsätze der Einsatzkomponente.</description>
 	<files>
 		<filename module="mod_einsatz_latest">mod_einsatz_latest.php</filename>
