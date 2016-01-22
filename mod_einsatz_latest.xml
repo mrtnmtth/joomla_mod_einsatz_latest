@@ -6,7 +6,7 @@
 	<copyright></copyright>
 	<license>GNU/GPL</license>
 	<version>0.5</version>
-	<description>Modul zur Anzeige einer Liste der letzten Einsätze für die Einsatzkomponente v3.0.</description>
+	<description>Modul zur Anzeige einer Liste der letzten Einsätze der Einsatzkomponente.</description>
 	<files>
 		<filename module="mod_einsatz_latest">mod_einsatz_latest.php</filename>
 		<filename>helper.php</filename>
