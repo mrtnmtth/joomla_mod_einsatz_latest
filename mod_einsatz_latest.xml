@@ -23,7 +23,7 @@
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
 				</field>
-				<field name="data1" type="radio" default="1" label="Einsatzart anzeigen" description="Einsatzart anzeigen">
+				<field name="einsatzart" type="radio" default="1" label="Einsatzart anzeigen" description="Einsatzart anzeigen">
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
 				</field>

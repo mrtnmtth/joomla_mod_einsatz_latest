@@ -72,8 +72,8 @@ for($i=0; $i < $count; $i++)
 		if ($display['date1'])
 			echo ' um '.date('H:i', $curTime).' Uhr';
 		echo '<br />';
-		if ($display['data1'])
-			echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->data1.'</b></a><br />';
+		if ($display['einsatzart'])
+			echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->title.'</b></a><br />';
 		if ($display['address'])
 			echo $frontReports[$i]->address.'<br />';
 		if ($display['summary'])
@@ -89,8 +89,8 @@ for($i=0; $i < $count; $i++)
 		if ($display['date1'])
 			echo ' um '.date('H:i', $curTime).' Uhr';
 		echo ', ';
-		if ($display['data1'])
-			echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->data1.'</b></a> ';
+		if ($display['einsatzart'])
+			echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->title.'</b></a> ';
 		if ($display['address'])
 			echo 'in '.$frontReports[$i]->address.'. ';
 		if ($display['summary'])

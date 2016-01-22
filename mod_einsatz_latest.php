@@ -24,7 +24,7 @@ $bild = $params->get('bild', '1');
 $bild_breite = $params->get('bild_breite', '1');
 $bild_float = $params->get('bild_float', '1');
 
-$display['data1'] = $params->get('data1', '1');
+$display['einsatzart'] = $params->get('einsatzart', '1');
 $display['address'] = $params->get('address', '0');
 $display['date1'] = $params->get('date1', '1');
 $display['summary'] = $params->get('summary', '1');
@@ -33,7 +33,7 @@ $display['desc'] = $params->get('desc', '0');
 $display['maxchar'] = $params->get('maxchar', '1');
 $display['umbruch'] = $params->get('umbruch', '0');
 $display['templatecolor'] = $params->get('templatecolor', '1');
-$title['data1'] = 'Einsatzart';
+$title['einsatzart'] = 'Einsatzart';
 $title['address'] = 'Adresse';
 $title['date1'] = 'Alarmierung um';
 $title['date2'] = 'Ausfahrt um';
