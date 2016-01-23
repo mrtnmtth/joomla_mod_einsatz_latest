@@ -40,41 +40,44 @@ div.einsatz_latest img {
 }
 </style>
 
-<?php
-if ($count>count($frontReports))
-	$count=count($frontReports);
+<?php foreach ($frontReports as $report) : ?>
+	<?php $alerttime = strtotime($report->date1); ?>
+	<div class="einsatz_latest<?php echo $moduleclass_sfx; ?>" onclick="parent.location='<?php echo $report->link; ?>'">
 
-for($i=0; $i < $count; $i++)
-{
-	$curTime = strtotime($frontReports[$i]->date1);
-	echo '<div class="einsatz_latest'.$moduleclass_sfx.'" onclick="parent.location=\''.$link[$i].'\'">';
+	<?php if (($bild=='1') and ($report->image) and !(strpos($report->image,'nopic'))) : ?>
+		<a href="<?php echo $report->link; ?>">
+		<img src="<?php echo $report->image; ?>" />
+		</a>
+	<?php endif; ?>
 
-	if (($bild=='1') and ($thumb[$i]) and !(strpos($thumb[$i],'nopic')))
-	{
-		echo '<a href="'.$link[$i].'">';
-		echo '<img src="'.$thumb[$i].'" />';
-		echo '</a>';
-	}
-	
-	echo '<p>';
+	<p>
+	<span><?php echo date('d.m.Y', $alerttime); ?></span>
 
-	echo '<span>'.date('d.m.Y', $curTime).'</span>';
-	if ($display['date1'])
-		echo ' um '.date('H:i', $curTime).' Uhr';
-	echo '<br />';
-	if ($display['einsatzart'])
-		echo '<a href="'.$link[$i].'"><b>'.$frontReports[$i]->title.'</b></a><br />';
-	if ($display['address'])
-		echo $frontReports[$i]->address.'<br />';
-	if ($display['summary'])
-		echo $frontReports[$i]->summary.'<br />';
-	if (($display['desc']) and ($frontReports[$i]->desc))
-		echo $frontReports[$i]->desc.' <b>...</b> ';
-	if ($readontext)
-		echo '<a href="'.$link[$i].'">'.$readontext.'</a>';
+	<?php if ($display['date1']) : ?>
+		<?php echo ' um '.date('H:i', $alerttime).' Uhr'; ?>
+	<?php endif; ?>
+	<br />
 
-	echo '</p></div>';
-	echo '<hr class="einsatz_latest separator'.$separator.'">';
-}
+	<?php if ($display['address']) : ?>
+		<?php echo $report->address; ?><br />
+	<?php endif; ?>
 
-?>
+	<?php if ($display['einsatzart']) : ?>
+		<b><?php echo $report->title; ?></b><br />
+	<?php endif; ?>
+
+	<?php if ($display['summary']) : ?>
+		<a href="<?php echo $report->link; ?>"><b><?php echo $report->summary; ?></b></a><br />
+	<?php endif; ?>
+
+	<?php if (($display['desc']) and ($report->desc)) : ?>
+		<?php echo $report->desc; ?> <b>...</b>
+	<?php endif; ?>
+
+	<?php if ($readontext) : ?>
+		<a href="<?php echo $report->link ?>"><?php echo $readontext ?></a>
+	<?php endif; ?>
+
+	</p></div>
+	<hr class="einsatz_latest separator<?php echo $separator; ?>">
+<?php endforeach; ?>

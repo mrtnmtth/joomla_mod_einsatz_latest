@@ -43,11 +43,10 @@ $title['people'] = 'Mannschaft';
 
 $menulink = JComponentHelper::getParams('com_einsatzkomponente')->get('homelink');
 $frontReports = modEinsatzLatestHelper::getReports($count);
-for($i=0; $i < $count; $i++)
+foreach($frontReports as $report)
 {
-	$frontReports[$i]->desc = modEinsatzLatestHelper::trimDesc($frontReports[$i]->desc, $maxchar);
-	$thumb[$i] = $frontReports[$i]->image;
-	$link[$i] = JRoute::_('index.php?option=com_einsatzkomponente&Itemid='.$menulink.'&view=einsatzbericht&id='.$frontReports[$i]->id);
+	$report->desc = modEinsatzLatestHelper::trimDesc($report->desc, $maxchar);
+	$report->link = JRoute::_('index.php?option=com_einsatzkomponente&Itemid='.$menulink.'&view=einsatzbericht&id='.$report->id);
 }
 
 require(JModuleHelper::getLayoutPath($module->module));
