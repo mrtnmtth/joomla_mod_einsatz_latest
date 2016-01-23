@@ -7,9 +7,6 @@ require_once __DIR__ . '/helper.php';
 $moduleclass_sfx = $params->get('moduleclass_sfx', '');
 $modulewidth = $params->get('modulewidth', '100%');
 
-$colortext = $params->get('color_text', 'cccccc');
-$coloralert = $params->get('color_alert', 'ff0000');
-$colorlink = $params->get('colorlink', 'ff0000');
 $count = $params->get('count', '5');
 $menuNone = $params->get('menu_none', 'No Reports Found');
 $maxchar = $params->get('maxchar', '250');

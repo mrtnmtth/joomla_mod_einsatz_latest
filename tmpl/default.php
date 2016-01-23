@@ -4,7 +4,6 @@ defined('_JEXEC') or die('Restricted Access');
 
 <style>
 div.einsatz_latest {
-	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$colortext.';'."\n"; ?>
 	width: <?php echo $modulewidth; ?>;
 }
 div.einsatz_latest:hover {
@@ -25,9 +24,6 @@ hr.separator2 {
 }
 div.einsatz_latest span {
 	font-weight: bold;
-}
-div.einsatz_latest a {
-	<?php if ($display['templatecolor'] != '1') echo 'color: #'.$coloralert.' !important;'."\n"; ?>
 }
 div.einsatz_latest p {
 	margin: 0px 10px 0px 10px;
