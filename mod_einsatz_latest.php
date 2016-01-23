@@ -34,6 +34,8 @@ foreach($frontReports as $report)
 	$report->link = JRoute::_('index.php?option=com_einsatzkomponente&Itemid='.$menulink.'&view=einsatzbericht&id='.$report->id);
 }
 
-require(JModuleHelper::getLayoutPath($module->module));
-
-?>
+// if reports are retrieved render layout, if not show message
+if ($frontReports)
+	require(JModuleHelper::getLayoutPath($module->module));
+else
+	echo '<span class="label label-important">'.$menuNone.'</span>';
