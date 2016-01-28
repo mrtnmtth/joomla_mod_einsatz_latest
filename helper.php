@@ -6,9 +6,10 @@ class modEinsatzLatestHelper
 	static function getReports($count)
 	{
 		$db = JFactory::getDBO();
-		$query = 'SELECT b.id, image, address, date1, summary, b.desc, title
+		$query = 'SELECT b.id, b.image, thumb, address, date1, summary, b.desc, title
 			FROM `#__eiko_einsatzberichte` AS b
-			JOIN `#__eiko_einsatzarten` AS a ON (b.data1=a.id)
+			LEFT JOIN `#__eiko_einsatzarten` AS a ON (b.data1=a.id)
+			LEFT JOIN `j25_eiko_images` AS i ON (b.image=i.image)
 			WHERE b.state=1 ORDER BY date1 DESC LIMIT '.$count;
 		$db->setQuery($query);
 		$fpReports = $db->loadObjectList();

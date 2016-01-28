@@ -42,7 +42,12 @@ div.einsatz_latest img {
 
 	<?php if (($bild=='1') and ($report->image) and !(strpos($report->image,'nopic'))) : ?>
 		<a href="<?php echo $report->link; ?>">
-		<img src="<?php echo $report->image; ?>" />
+			<?php // Use thumb instead of image if available ?>
+			<?php if ($report->thumb) : ?>
+				<img src="<?php echo $report->thumb; ?>" />
+			<?php else : ?>
+				<img src="<?php echo $report->image; ?>" />
+			<?php endif; ?>
 		</a>
 	<?php endif; ?>
 
