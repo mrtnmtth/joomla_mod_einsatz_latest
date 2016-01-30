@@ -5,6 +5,8 @@ defined('_JEXEC') or die('Restricted Access');
 <style>
 div.einsatz_latest {
 	width: <?php echo $modulewidth; ?>;
+	font-size: 1.1em;
+	line-height: 1.25em;
 }
 div.einsatz_latest:hover {
 	background-color: #F5F5FF;
@@ -64,11 +66,11 @@ div.einsatz_latest img {
 	<?php endif; ?>
 
 	<?php if ($display['einsatzart']) : ?>
-		<b><?php echo $report->title; ?></b><br />
+		<a href="<?php echo $report->link; ?>"><b><?php echo $report->title; ?></b></a><br />
 	<?php endif; ?>
 
 	<?php if ($display['summary']) : ?>
-		<a href="<?php echo $report->link; ?>"><b><?php echo $report->summary; ?></b></a><br />
+		<?php echo $report->summary; ?><br />
 	<?php endif; ?>
 
 	<?php if (($display['desc']) and ($report->desc)) : ?>
