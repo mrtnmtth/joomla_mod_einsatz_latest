@@ -3,8 +3,11 @@ defined('_JEXEC') or die('Restricted Access');
 ?>
 
 <style>
-div.einsatz_latest {
+div.einsatz_latest_wrapper {
 	width: <?php echo $modulewidth; ?>;
+}
+
+div.einsatz_latest {
 	font-size: 1.1em;
 	line-height: 1.25em;
 }
@@ -38,6 +41,7 @@ div.einsatz_latest img {
 }
 </style>
 
+<div class="einsatz_latest_wrapper<?php echo $moduleclass_sfx; ?>">
 <?php foreach ($frontReports as $report) : ?>
 	<?php $alerttime = strtotime($report->date1); ?>
 	<div class="einsatz_latest<?php echo $moduleclass_sfx; ?>" onclick="parent.location='<?php echo $report->link; ?>'">
@@ -84,3 +88,4 @@ div.einsatz_latest img {
 	</p></div>
 	<hr class="einsatz_latest separator<?php echo $separator; ?>">
 <?php endforeach; ?>
+</div>
