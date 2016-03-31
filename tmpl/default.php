@@ -82,5 +82,7 @@ div.einsatz_latest img {
 	<?php endif; ?>
 
 	</p></div>
-	<hr class="einsatz_latest separator<?php echo $separator; ?>">
+	<?php if ($separator) : ?>
+		<hr class="einsatz_latest separator<?php echo $separator; ?>">
+	<?php endif; ?>
 <?php endforeach; ?>
