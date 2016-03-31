@@ -10,6 +10,7 @@ div.einsatz_latest_wrapper {
 div.einsatz_latest {
 	font-size: 1.1em;
 	line-height: 1.25em;
+	overflow: auto;
 }
 div.einsatz_latest:hover {
 	background-color: #F5F5FF;
@@ -34,7 +35,7 @@ div.einsatz_latest p {
 	margin: 0px 10px 0px 10px;
 }
 div.einsatz_latest img {
-	margin: 2px 10px 8px 10px;
+	margin: 2px 10px;
 	height: auto;
 	width: <?php echo $bild_breite; ?>;
 	float: <?php echo $bild_float; ?>;
@@ -86,6 +87,8 @@ div.einsatz_latest img {
 	<?php endif; ?>
 
 	</p></div>
-	<hr class="einsatz_latest separator<?php echo $separator; ?>">
+	<?php if ($separator) : ?>
+		<hr class="einsatz_latest separator<?php echo $separator; ?>">
+	<?php endif; ?>
 <?php endforeach; ?>
 </div>
