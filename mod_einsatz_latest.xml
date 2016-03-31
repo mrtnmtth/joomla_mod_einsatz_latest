@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.0" client="site" method="upgrade">
+<extension type="module" version="3.2" client="site" method="upgrade">
 	<name>letzte Einsätze</name>
 	<author>mattronic</author>
 	<creationDate>March 2016</creationDate>
@@ -46,14 +46,14 @@
 					<option value="1">gestrichelt</option>
 					<option value="2">durchgezogen</option>
 				</field>
-				<field name="separatorcolor" type="color" default="#333" label="Trennlinienfarbe" description="Farbe der Trennlinien" />
+				<field name="separatorcolor" type="color" default="#333" showon="separator:1,2" label="Trennlinienfarbe" description="Farbe der Trennlinien" />
 				<field name="line1" type="spacer" hr="true" />
 				<field name="bild" type="radio" default="1" label="Einsatzbilder anzeigen" description="Wenn ja ausgewählt ist, wird jeweils das im Einsatzbericht zuerst ausgewählte Bild angezeigt">
 					<option value="0">Nein</option>
 					<option value="1">Ja</option>
 				</field>
-				<field name="bild_breite" type="text" default="100px" label="Breite der Bilder (z.B. 100px)" description="" />
-				<field name="bild_float" type="radio" default="right" label="Float der Bilder" description="">
+				<field name="bild_breite" type="text" default="100px" showon="bild:1" label="Breite der Bilder (z.B. 100px)" description="" />
+				<field name="bild_float" type="radio" default="right" showon="bild:1" label="Float der Bilder" description="">
 					<option value="left">links</option>
 					<option value="right">rechts</option>
 				</field>
