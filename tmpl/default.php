@@ -7,6 +7,7 @@ div.einsatz_latest {
 	width: <?php echo $modulewidth; ?>;
 	font-size: 1.1em;
 	line-height: 1.25em;
+	overflow: auto;
 }
 div.einsatz_latest:hover {
 	background-color: #F5F5FF;
@@ -31,7 +32,7 @@ div.einsatz_latest p {
 	margin: 0px 10px 0px 10px;
 }
 div.einsatz_latest img {
-	margin: 2px 10px 8px 10px;
+	margin: 2px 10px;
 	height: auto;
 	width: <?php echo $bild_breite; ?>;
 	float: <?php echo $bild_float; ?>;
