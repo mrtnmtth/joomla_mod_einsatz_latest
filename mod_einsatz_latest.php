@@ -24,7 +24,6 @@ $display['date1'] = $params->get('date1', '1');
 $display['summary'] = $params->get('summary', '1');
 $display['desc'] = $params->get('desc', '0');
 $display['maxchar'] = $params->get('maxchar', '1');
-$display['templatecolor'] = $params->get('templatecolor', '1');
 
 $menulink = JComponentHelper::getParams('com_einsatzkomponente')->get('homelink');
 $frontReports = modEinsatzLatestHelper::getReports($count);
