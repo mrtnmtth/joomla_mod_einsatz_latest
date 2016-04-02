@@ -19,28 +19,28 @@
 			<fieldset name="basic">
 				<field name="count" type="text" default="5" label="Anzahl anzuzeigender Einsätze" description="Anzahl anzuzeigender Einsätze" />
 				<field name="menu_none" type="text" default="Noch keine Einsätze vorhanden." label="Text falls noch kein Einsatz vorhanden" description="Text falls noch kein Einsatz vorhanden" />
-				<field name="date1" type="radio" default="1" label="Einsatzzeit anzeigen" description="Einsatzzeit anzeigen">
-					<option value="0">Nein</option>
-					<option value="1">Ja</option>
+				<field name="date1" type="radio" class="btn-group btn-group-yesno" default="1" label="Einsatzzeit" description="Einsatzzeit">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
 				</field>
-				<field name="einsatzart" type="radio" default="1" label="Einsatzart anzeigen" description="Einsatzart anzeigen">
-					<option value="0">Nein</option>
-					<option value="1">Ja</option>
+				<field name="einsatzart" type="radio" class="btn-group btn-group-yesno" default="1" label="Einsatzart" description="Einsatzart">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
 				</field>
-				<field name="address" type="radio" default="1" label="Einsatzort anzeigen" description="Einsatzort anzeigen">
-					<option value="0">Nein</option>
-					<option value="1">Ja</option>
+				<field name="address" type="radio" class="btn-group btn-group-yesno" default="1" label="Einsatzort" description="Einsatzort">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
 				</field>
-				<field name="summary" type="radio" default="0" label="Kurzbeschreibung anzeigen" description="Kurzbeschreibung anzeigen">
-					<option value="0">Nein</option>
-					<option value="1">Ja</option>
+				<field name="summary" type="radio" class="btn-group btn-group-yesno" default="0" label="Kurzbeschreibung" description="Kurzbeschreibung">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
 				</field>
-				<field name="desc" type="radio" default="0" label="ausführliche Einsatzbeschreibung anzeigen" description="ausführliche Einsatzbeschreibung anzeigen">
-					<option value="0">Nein</option>
-					<option value="1">Ja</option>
+				<field name="desc" type="radio" class="btn-group btn-group-yesno" default="0" label="ausführliche Beschreibung" description="ausführliche EBeschreibung anzeigen">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
 				</field>
-				<field name="maxchar" type="text" default="250" label="Maximale Anzahl der Zeichen in der Beschreibung" description="Maximale Anzahl der Zeichen in der Beschreibung" />
-				<field name="readontext" type="text" default="" label="Weiterlesen-Linktext" description="Feld bitte leer lassen, um keinen Weiterlesen-Link anzuzeigen" />
+				<field name="maxchar" type="text" default="250" showon="desc:1" label="Maximale Anzahl der Zeichen in der Beschreibung" description="Maximale Anzahl der Zeichen in der Beschreibung" />
+				<field name="readontext" type="text" default="" showon="desc:1" label="Weiterlesen-Linktext" description="Feld bitte leer lassen, um keinen Weiterlesen-Link anzuzeigen" />
 				<field name="separator" type="list" default="1" label="Trennlinie" description="Trennlinie zwischen den Einsätzen">
 					<option value="0">keine</option>
 					<option value="1">gestrichelt</option>
@@ -48,12 +48,12 @@
 				</field>
 				<field name="separatorcolor" type="color" default="#333" showon="separator:1,2" label="Trennlinienfarbe" description="Farbe der Trennlinien" />
 				<field name="line1" type="spacer" hr="true" />
-				<field name="bild" type="radio" default="1" label="Einsatzbilder anzeigen" description="Wenn ja ausgewählt ist, wird jeweils das im Einsatzbericht zuerst ausgewählte Bild angezeigt">
-					<option value="0">Nein</option>
-					<option value="1">Ja</option>
+				<field name="bild" type="radio" class="btn-group btn-group-yesno" default="1" label="Einsatzthumbnail" description="Einsatzthumbnail">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
 				</field>
 				<field name="bild_breite" type="text" default="100px" showon="bild:1" label="Breite der Bilder (z.B. 100px)" description="" />
-				<field name="bild_float" type="radio" default="right" showon="bild:1" label="Float der Bilder" description="">
+				<field name="bild_float" type="radio" class="btn-group" default="right" showon="bild:1" label="Float der Bilder" description="">
 					<option value="left">links</option>
 					<option value="right">rechts</option>
 				</field>
