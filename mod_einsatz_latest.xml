@@ -2,10 +2,10 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>letzte Einsätze</name>
 	<author>mattronic</author>
-	<creationDate>March 2016</creationDate>
+	<creationDate>August 2016</creationDate>
 	<copyright></copyright>
 	<license>GNU/GPL</license>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<description>Modul zur Anzeige einer Liste der letzten Einsätze der Einsatzkomponente.</description>
 	<files>
 		<filename module="mod_einsatz_latest">mod_einsatz_latest.php</filename>
