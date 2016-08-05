@@ -7,10 +7,14 @@ class modEinsatzLatestHelper
 	{
 		$db = JFactory::getDBO();
 		$query = 'SELECT b.id, b.image, thumb, address, date1, summary, b.desc, title
-			FROM `#__eiko_einsatzberichte` AS b
+			FROM (
+				SELECT *
+				FROM `#__eiko_einsatzberichte`
+				WHERE state=1 ORDER BY date1 DESC LIMIT '.$count.'
+			) AS b
 			LEFT JOIN `#__eiko_einsatzarten` AS a ON (b.data1=a.id)
-			LEFT JOIN `j25_eiko_images` AS i ON (b.image=i.image)
-			WHERE b.state=1 ORDER BY date1 DESC LIMIT '.$count;
+			LEFT JOIN `#__eiko_images` AS i ON (b.image=i.image)
+			ORDER BY date1 DESC';
 		$db->setQuery($query);
 		$fpReports = $db->loadObjectList();
 		return $fpReports;
