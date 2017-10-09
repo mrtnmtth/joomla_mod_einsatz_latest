@@ -3,22 +3,12 @@ defined('_JEXEC') or die('Restricted Access');
 ?>
 
 <style>
-div.einsatz_latest_wrapper {
+div.einsatz_latest {
 	width: <?php echo $modulewidth; ?>;
 }
-
-div.einsatz_latest {
-	font-size: 1.1em;
-	line-height: 1.25em;
-	overflow: auto;
-}
-div.einsatz_latest:hover {
-	background-color: #F5F5FF;
+div.einsatz_latest .media:hover {
+	background-color: #E9F5FF;
 	cursor: pointer;
-}
-hr.einsatz_latest {
-	color: transparent;
-	clear: both;
 }
 hr.separator1 {
 	border: 0;
@@ -28,38 +18,29 @@ hr.separator2 {
 	border: 0;
 	border-bottom: 1px solid <?php echo $separatorcolor; ?>;
 }
-div.einsatz_latest span {
-	font-weight: bold;
-}
-div.einsatz_latest p {
-	margin: 0px 10px 0px 10px;
-}
-div.einsatz_latest img {
-	margin: 2px 10px;
-	height: auto;
+div.einsatz_latest img.media-object {
 	width: <?php echo $bild_breite; ?>;
-	float: <?php echo $bild_float; ?>;
 }
 </style>
 
-<div class="einsatz_latest_wrapper<?php echo $moduleclass_sfx; ?>">
+<div class="einsatz_latest<?php echo $moduleclass_sfx; ?>">
 <?php foreach ($frontReports as $report) : ?>
 	<?php $alerttime = strtotime($report->date1); ?>
-	<div class="einsatz_latest<?php echo $moduleclass_sfx; ?>" onclick="parent.location='<?php echo $report->link; ?>'">
+	<div class="media" onclick="parent.location='<?php echo $report->link; ?>'">
 
 	<?php if (($bild=='1') and ($report->image) and !(strpos($report->image,'nopic'))) : ?>
-		<a href="<?php echo $report->link; ?>">
+		<a class="pull-<?php echo $bild_float; ?>" href="<?php echo $report->link; ?>">
 			<?php // Use thumb instead of image if available ?>
 			<?php if ($report->thumb) : ?>
-				<img src="<?php echo $report->thumb; ?>" />
+				<img class="media-object" src="<?php echo $report->thumb; ?>" />
 			<?php else : ?>
-				<img src="<?php echo $report->image; ?>" />
+				<img class="media-object" src="<?php echo $report->image; ?>" />
 			<?php endif; ?>
 		</a>
 	<?php endif; ?>
 
-	<p>
-	<span><?php echo date('d.m.Y', $alerttime); ?></span>
+	<div class="media-body">
+	<strong><?php echo date('d.m.Y', $alerttime); ?></strong>
 
 	<?php if ($display['date1']) : ?>
 		<?php echo ' um '.date('H:i', $alerttime).' Uhr'; ?>
@@ -86,7 +67,8 @@ div.einsatz_latest img {
 		<a href="<?php echo $report->link ?>"><?php echo $readontext ?></a>
 	<?php endif; ?>
 
-	</p></div>
+	</div>
+	</div>
 	<?php if ($separator) : ?>
 		<hr class="einsatz_latest separator<?php echo $separator; ?>">
 	<?php endif; ?>
