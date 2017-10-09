@@ -60,11 +60,12 @@ div.einsatz_latest img.media-object {
 	<?php endif; ?>
 
 	<?php if (($display['desc']) and ($report->desc)) : ?>
-		<?php echo $report->desc; ?> <b>...</b>
-	<?php endif; ?>
-
-	<?php if ($readontext) : ?>
-		<a href="<?php echo $report->link ?>"><?php echo $readontext ?></a>
+		<p>
+			<?php echo $report->desc; ?><b>&hellip;</b>
+			<?php if ($readontext) : ?>
+				<a href="<?php echo $report->link ?>"><?php echo $readontext ?></a>
+			<?php endif; ?>
+		</p>
 	<?php endif; ?>
 
 	</div>
