@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted Access');
 
-class modEinsatzLatestHelper
+class ModEinsatzLatestHelper
 {
 	static function getReports($count)
 	{

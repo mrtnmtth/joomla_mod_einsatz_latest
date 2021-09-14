@@ -1,8 +1,12 @@
 <?php
-
 defined('_JEXEC') or die('Illegal Access');
 
-require_once __DIR__ . '/helper.php';
+/**
+ * @var \Joomla\CMS\Table\Module $module
+ * @var \Joomla\CMS\Object\CMSObject $params
+ */
+
+JLoader::register('ModEinsatzLatestHelper', __DIR__ . '/helper.php');
 
 $moduleclass_sfx = $params->get('moduleclass_sfx', '');
 $modulewidth = $params->get('modulewidth', '100%');
@@ -34,7 +38,12 @@ foreach($frontReports as $report)
 }
 
 // if reports are retrieved render layout, if not show message
-if ($frontReports)
-	require(JModuleHelper::getLayoutPath($module->module));
-else
-	echo '<span class="label label-important">'.$menuNone.'</span>';
+if ($frontReports) {
+    $doc = JFactory::getDocument();
+    $doc->addStyleSheet(JURI::root() . 'modules/mod_einsatz_latest/css/mod_einsatz_latest.css');
+
+    require(JModuleHelper::getLayoutPath($module->module));
+}
+else {
+    echo '<span class="label label-important">'.$menuNone.'</span>';
+}

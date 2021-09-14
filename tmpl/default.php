@@ -1,77 +1,40 @@
 <?php
 defined('_JEXEC') or die('Restricted Access');
-?>
 
-<style>
-div.einsatz_latest {
-	width: <?php echo $modulewidth; ?>;
-}
-div.einsatz_latest .media:hover {
-	background-color: #E9F5FF;
-	cursor: pointer;
-}
-hr.separator1 {
-	border: 0;
-	border-bottom: 1px dashed <?php echo $separatorcolor; ?>;
-}
-hr.separator2 {
-	border: 0;
-	border-bottom: 1px solid <?php echo $separatorcolor; ?>;
-}
-div.einsatz_latest img.media-object {
-	width: <?php echo $bild_breite; ?>;
-}
-</style>
+/**
+ * @var string $moduleclass_sfx
+ * @var array $frontReports
+ */
+?>
 
 <div class="einsatz_latest<?php echo $moduleclass_sfx; ?>">
 <?php foreach ($frontReports as $report) : ?>
-	<?php $alerttime = strtotime($report->date1); ?>
-	<div class="media" onclick="parent.location='<?php echo $report->link; ?>'">
+	<?php
+        $alertTime = strtotime($report->date1);
+        $img = $report->thumb ?: $report->image;
+    ?>
 
-	<?php if (($bild=='1') and ($report->image) and !(strpos($report->image,'nopic'))) : ?>
-		<a class="pull-<?php echo $bild_float; ?>" href="<?php echo $report->link; ?>">
-			<?php // Use thumb instead of image if available ?>
-			<?php if ($report->thumb) : ?>
-				<img class="media-object" src="<?php echo $report->thumb; ?>" />
-			<?php else : ?>
-				<img class="media-object" src="<?php echo $report->image; ?>" />
-			<?php endif; ?>
-		</a>
-	<?php endif; ?>
-
-	<div class="media-body">
-	<strong><?php echo date('d.m.Y', $alerttime); ?></strong>
-
-	<?php if ($display['date1']) : ?>
-		<?php echo ' um '.date('H:i', $alerttime).' Uhr'; ?>
-	<?php endif; ?>
-	<br />
-
-	<?php if ($display['address']) : ?>
-		<?php echo $report->address; ?><br />
-	<?php endif; ?>
-
-	<?php if ($display['einsatzart']) : ?>
-		<a href="<?php echo $report->link; ?>"><b><?php echo $report->title; ?></b></a><br />
-	<?php endif; ?>
-
-	<?php if ($display['summary']) : ?>
-		<?php echo $report->summary; ?><br />
-	<?php endif; ?>
-
-	<?php if (($display['desc']) and ($report->desc)) : ?>
-		<p>
-			<?php echo $report->desc; ?><b>&hellip;</b>
-			<?php if ($readontext) : ?>
-				<a href="<?php echo $report->link ?>"><?php echo $readontext ?></a>
-			<?php endif; ?>
-		</p>
-	<?php endif; ?>
-
-	</div>
-	</div>
-	<?php if ($separator) : ?>
-		<hr class="einsatz_latest separator<?php echo $separator; ?>">
-	<?php endif; ?>
+    <div class="card mb-3" style="max-width: 540px;" onclick="parent.location='<?= $report->link; ?>'">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <?php if ($img): ?>
+                    <img src="<?= $img; ?>" class="img-fluid rounded-start">
+                <?php endif; ?>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $report->summary; ?></h5>
+                    <p class="card-text">
+                        <?= $report->address; ?>
+                    </p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            <?= date('d.m.Y H:i', $alertTime); ?>
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php endforeach; ?>
 </div>
