@@ -2,13 +2,14 @@
 defined('_JEXEC') or die('Restricted Access');
 
 /**
- * @var string $moduleclass_sfx
- * @var array $frontReports
+ * @var string $moduleClassSfx
+ * @var array $reports
  */
 ?>
 
-<div class="einsatz_latest<?php echo $moduleclass_sfx; ?>">
-<?php foreach ($frontReports as $report) : ?>
+<div class="einsatz_latest<?php echo $moduleClassSfx; ?>">
+
+<?php foreach ($reports as $report) : ?>
 	<?php
         $alertTime = strtotime($report->date1);
         $img = $report->thumb ?: $report->image;
@@ -37,4 +38,5 @@ defined('_JEXEC') or die('Restricted Access');
         </div>
     </div>
 <?php endforeach; ?>
+
 </div>

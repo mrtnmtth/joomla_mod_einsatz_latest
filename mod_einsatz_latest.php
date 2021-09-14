@@ -8,25 +8,25 @@ defined('_JEXEC') or die('Illegal Access');
 
 JLoader::register('ModEinsatzLatestHelper', __DIR__ . '/helper.php');
 
-$moduleclass_sfx = $params->get('moduleclass_sfx', '');
+$moduleClassSfx = $params->get('moduleclass_sfx', '');
 
 $count = $params->get('count', '5');
-$menuNone = $params->get('menu_none', 'No Reports Found');
+$placeholderText = $params->get('menu_none', 'No Reports Found');
 
-$menulink = JComponentHelper::getParams('com_einsatzkomponente')->get('homelink');
-$frontReports = modEinsatzLatestHelper::getReports($count);
-foreach($frontReports as $report)
+$menuLink = JComponentHelper::getParams('com_einsatzkomponente')->get('homelink');
+$reports = modEinsatzLatestHelper::getReports($count);
+
+foreach($reports as $report)
 {
-	$report->link = JRoute::_('index.php?option=com_einsatzkomponente&Itemid='.$menulink.'&view=einsatzbericht&id='.$report->id);
+	$report->link = JRoute::_('index.php?option=com_einsatzkomponente&Itemid='.$menuLink.'&view=einsatzbericht&id='.$report->id);
 }
 
 // if reports are retrieved render layout, if not show message
-if ($frontReports) {
+if ($reports) {
     $doc = JFactory::getDocument();
     $doc->addStyleSheet(JURI::root() . 'modules/mod_einsatz_latest/css/mod_einsatz_latest.css');
 
     require(JModuleHelper::getLayoutPath($module->module));
-}
-else {
-    echo '<span class="label label-important">'.$menuNone.'</span>';
+} else {
+    echo '<span class="label label-important">'.$placeholderText.'</span>';
 }
