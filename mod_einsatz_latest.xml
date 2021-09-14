@@ -18,7 +18,6 @@
 			<fieldset name="basic">
 				<field name="count" type="text" default="5" label="Anzahl anzuzeigender Einsätze" description="Anzahl anzuzeigender Einsätze" />
 				<field name="menu_none" type="text" default="Noch keine Einsätze vorhanden." label="Text falls noch kein Einsatz vorhanden" description="Text falls noch kein Einsatz vorhanden" />
-				<field name="maxchar" type="text" default="250" showon="desc:1" label="Maximale Anzahl der Zeichen in der Beschreibung" description="Maximale Anzahl der Zeichen in der Beschreibung" />
 			</fieldset>
 			<fieldset name="advanced">
 				<field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
