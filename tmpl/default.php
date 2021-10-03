@@ -9,15 +9,15 @@ defined('_JEXEC') or die('Restricted Access');
 
 <div class="einsatz_latest<?php echo $moduleClassSfx; ?>">
 
-<?php foreach ($reports as $report) : ?>
-	<?php
-        $alertTime = strtotime($report->date1);
-        $img = $report->thumb ?: $report->image;
-    ?>
+<?php foreach ($reports as $report):
+
+    $alertTime = strtotime($report->date1);
+    $color = $report->marker ?: '#bbbbbb';
+    $img = $report->thumb ?: $report->image; ?>
 
     <div class="card mb-3" style="max-width: 540px;" onclick="parent.location='<?= $report->link; ?>'">
         <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 alert-icon" style="background-color: <?= $color; ?>aa; background-image: url('<?= $report->list_icon; ?>');">
                 <?php if ($img): ?>
                     <img src="<?= $img; ?>" class="img-fluid rounded-start">
                 <?php endif; ?>

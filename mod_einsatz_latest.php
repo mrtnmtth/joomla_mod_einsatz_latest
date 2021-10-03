@@ -10,7 +10,7 @@ JLoader::register('ModEinsatzLatestHelper', __DIR__ . '/helper.php');
 
 $moduleClassSfx = $params->get('moduleclass_sfx', '');
 
-$count = $params->get('count', '5');
+$count = (int) $params->get('count', 5);
 $placeholderText = $params->get('menu_none', 'No Reports Found');
 
 $menuLink = JComponentHelper::getParams('com_einsatzkomponente')->get('homelink');
